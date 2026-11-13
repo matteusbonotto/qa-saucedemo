@@ -1,8 +1,10 @@
 // Converte o resultado do Playwright (resultados/resultado.json) em um arquivo
 // que o QAlor importa em "Importar e exportar" > Execuções (formato qalor-docs).
+// Casos e defeitos vão pela chave do QAlor (SDEMO-TC-1, SDEMO-DF-1): o QAlor troca pela referência
+// interna na importação, então o mesmo arquivo serve para qualquer navegador ou conta.
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 
-const mapa = JSON.parse(readFileSync('qalor/casos.json', 'utf8')).casos;
+const PROJETO = process.env.QALOR_PROJETO || 'SDEMO';
 const relatorio = JSON.parse(readFileSync('resultados/resultado.json', 'utf8'));
 
 const linkRelatorio = process.env.LINK_RELATORIO || '';
@@ -17,8 +19,8 @@ const casos = [];
 function percorrer(suite) {
   for (const spec of suite.specs || []) {
     const chave = spec.title.match(/^(TC-\d+)\b/)?.[1];
-    const id = chave && mapa[chave];
-    if (!id) continue;
+    if (!chave) continue;
+    const id = `${PROJETO}-${chave}`;
     for (const teste of spec.tests) {
       const ultimo = teste.results.at(-1);
       if (!ultimo) continue;
@@ -35,6 +37,7 @@ function percorrer(suite) {
         at: ultimo.startTime || agora,
         seconds: Math.round((ultimo.duration || 0) / 1000),
         notes: partes.join(' '),
+        ...(defeito && status === 'fail' ? { defects: [defeito] } : {}),
       };
     }
   }
@@ -53,7 +56,7 @@ const arquivo = {
       type: 'run',
       title: `Automação Playwright - build ${build}`,
       status: 'done',
-      data: { environment: 'qa', build: String(build), cases: casos, results: resultados },
+      data: { environment: 'prod', build: String(build), tester: process.env.QALOR_TESTADOR || 'Matheus Bonotto', cases: casos, results: resultados },
     },
   ],
 };

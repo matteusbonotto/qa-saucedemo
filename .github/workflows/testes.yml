@@ -5,10 +5,20 @@ on:
     branches: [main]
   pull_request:
   workflow_dispatch:
+  schedule:
+    - cron: '0 9 * * 1' # toda segunda, para perceber se o site mudou
+
+permissions:
+  contents: read
+
+concurrency:
+  group: testes-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   playwright:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     defaults:
       run:
         working-directory: automacao
@@ -24,6 +34,9 @@ jobs:
       - name: Instalar dependências
         run: npm ci
 
+      - name: Conferir tipos
+        run: npx tsc --noEmit
+
       - name: Instalar o navegador
         run: npx playwright install --with-deps chromium
 
@@ -33,10 +46,14 @@ jobs:
       - name: Gerar arquivo para o QAlor
         if: always()
         env:
-          LINK_RELATORIO: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-        run: node scripts/qalor-export.mjs
+          LINK_RELATORIO: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+        run: |
+          node scripts/qalor-export.mjs
+          cp resultados/qalor-execucao.json playwright-report/
+          echo "### Resultado" >> "$GITHUB_STEP_SUMMARY"
+          node -e "const r=Object.values(require('./resultados/qalor-execucao.json').items[0].data.results);const c=s=>r.filter(x=>x.status===s).length;console.log('| Testes | Passaram | Falhas esperadas (defeitos conhecidos) |\n|---|---|---|\n| '+r.length+' | '+c('pass')+' | '+c('fail')+' |')" >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Publicar relatório
+      - name: Publicar relatório (artefato)
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -44,10 +61,22 @@ jobs:
           path: automacao/playwright-report
           retention-days: 30
 
-      - name: Publicar arquivo do QAlor
-        if: always()
-        uses: actions/upload-artifact@v4
+      - name: Preparar GitHub Pages
+        if: always() && github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: qalor-execucao
-          path: automacao/resultados/qalor-execucao.json
-          retention-days: 30
+          path: automacao/playwright-report
+
+  pages:
+    needs: playwright
+    if: always() && github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && needs.playwright.result != 'cancelled'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4

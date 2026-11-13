@@ -17,3 +17,10 @@ export const test = base.extend<{ vigiaConsole: void }>({
 });
 
 export { expect };
+
+// Defeito conhecido que não será corrigido (projeto de estudo): test.fail() mantém a suíte verde,
+// avisa se o defeito sumir, e a anotação leva o ID do defeito para o arquivo do QAlor.
+export function defeito(id: string, descricao: string) {
+  test.info().annotations.push({ type: 'defeito', description: id });
+  test.fail(true, `Defeito conhecido ${id}: ${descricao}`);
+}

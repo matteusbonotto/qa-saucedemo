@@ -48,4 +48,25 @@ test.describe('Login', () => {
     await login.entrar('STANDARD_USER');
     await login.esperarErro('Epic sadface: Username and password do not match any user in this service');
   });
+
+  test('TC-35 entrar com Enter no campo de senha', async ({ page }) => {
+    const login = new LoginPage(page);
+    await login.abrir();
+    await login.usuario().fill(USUARIOS.padrao);
+    await login.senha().fill(SENHA);
+    await login.senha().press('Enter');
+    await expect(page.getByTestId('title')).toHaveText('Products');
+  });
+
+  test('TC-36 senha aparece mascarada', async ({ page }) => {
+    const login = new LoginPage(page);
+    await login.abrir();
+    await login.senha().fill(SENHA);
+    await expect(login.senha()).toHaveAttribute('type', 'password');
+  });
+
+  test('TC-37 carrinho sem login volta para o login', async ({ page }) => {
+    await page.goto('/cart.html');
+    await new LoginPage(page).esperarErro("Epic sadface: You can only access '/cart.html' when you are logged in.");
+  });
 });

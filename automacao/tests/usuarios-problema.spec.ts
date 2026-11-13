@@ -1,20 +1,14 @@
-import { test, expect } from '../fixtures/console';
+import { test, expect, defeito } from '../fixtures/console';
 import { LoginPage } from '../pages/LoginPage';
 import { ProdutosPage } from '../pages/ProdutosPage';
 import { CarrinhoPage } from '../pages/CarrinhoPage';
 import { CheckoutPage } from '../pages/CheckoutPage';
 import { USUARIOS, CLIENTE } from '../pages/dados';
 
-// Os testes abaixo cobrem defeitos conhecidos que não serão corrigidos (projeto de estudo).
-// test.fail() mantém a suíte verde e avisa se algum deles passar a funcionar.
-function defeito(id: string, descricao: string) {
-  test.info().annotations.push({ type: 'defeito', description: id });
-  test.fail(true, `Defeito conhecido ${id}: ${descricao}`);
-}
 
 test.describe('Usuários com problema', () => {
   test('TC-30 problem_user: cada produto com sua imagem', async ({ page }) => {
-    defeito('SDEMO-DF-13', 'todos os produtos aparecem com a mesma imagem');
+    defeito('SDEMO-DF-2', 'todos os produtos aparecem com a mesma imagem');
     await new LoginPage(page).entrar(USUARIOS.problema);
     const imagens = await new ProdutosPage(page).imagens().evaluateAll((els) =>
       els.map((e) => (e as HTMLImageElement).src),
@@ -23,7 +17,7 @@ test.describe('Usuários com problema', () => {
   });
 
   test('TC-31 problem_user: ordenação por preço', async ({ page }) => {
-    defeito('SDEMO-DF-14', 'a ordenação por preço não funciona');
+    defeito('SDEMO-DF-3', 'a ordenação por preço não funciona');
     await new LoginPage(page).entrar(USUARIOS.problema);
     const produtos = new ProdutosPage(page);
     await produtos.ordenarPor('lohi');
@@ -32,7 +26,7 @@ test.describe('Usuários com problema', () => {
   });
 
   test('TC-32 problem_user: preencher Last Name no checkout', async ({ page }) => {
-    defeito('SDEMO-DF-15', 'o Last Name é gravado no campo First Name');
+    defeito('SDEMO-DF-4', 'o Last Name é gravado no campo First Name');
     await new LoginPage(page).entrar(USUARIOS.problema);
     const produtos = new ProdutosPage(page);
     await produtos.adicionar('Sauce Labs Backpack');
@@ -45,7 +39,7 @@ test.describe('Usuários com problema', () => {
   });
 
   test('TC-33 error_user: finalizar o pedido', async ({ page }) => {
-    defeito('SDEMO-DF-16', 'o botão Finish não conclui o pedido');
+    defeito('SDEMO-DF-5', 'o botão Finish não conclui o pedido');
     await new LoginPage(page).entrar(USUARIOS.erro);
     const produtos = new ProdutosPage(page);
     await produtos.adicionar('Sauce Labs Backpack');
@@ -59,7 +53,7 @@ test.describe('Usuários com problema', () => {
   });
 
   test('TC-34 performance_glitch_user: login em até 2 segundos', async ({ page }) => {
-    defeito('SDEMO-DF-17', 'o login demora cerca de 5 segundos');
+    defeito('SDEMO-DF-6', 'o login demora cerca de 5 segundos');
     const login = new LoginPage(page);
     await login.abrir();
     await login.usuario().fill(USUARIOS.lento);
@@ -68,5 +62,22 @@ test.describe('Usuários com problema', () => {
     await login.botaoLogin().click();
     await new ProdutosPage(page).estaAberta();
     expect(Date.now() - inicio).toBeLessThanOrEqual(2000);
+  });
+});
+
+test.describe('visual_user', () => {
+  test('TC-47 visual_user: lista igual à do standard_user', async ({ page }) => {
+    defeito('SDEMO-DF-10', 'imagem, preços e botão diferentes do standard_user');
+    const tela = async (usuario: string) => {
+      await new LoginPage(page).entrar(usuario);
+      const produtos = new ProdutosPage(page);
+      return {
+        imagens: await produtos.imagens().evaluateAll((is) => is.map((i) => (i as HTMLImageElement).src.split('/').pop())),
+        precos: await produtos.precos().allTextContents(),
+        botoes: await page.locator('.inventory_item button').evaluateAll((bs) => bs.map((b) => b.className)),
+      };
+    };
+    const padrao = await tela(USUARIOS.padrao);
+    expect(await tela(USUARIOS.visual)).toEqual(padrao);
   });
 });

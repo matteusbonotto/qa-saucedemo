@@ -1,4 +1,4 @@
-import { test, expect } from '../fixtures/console';
+import { test, expect, defeito } from '../fixtures/console';
 import { LoginPage } from '../pages/LoginPage';
 import { ProdutosPage } from '../pages/ProdutosPage';
 import { USUARIOS } from '../pages/dados';
@@ -58,5 +58,25 @@ test.describe('Produtos', () => {
     await expect(page.getByTestId('inventory-item-price')).toHaveText('$29.99');
     await page.getByTestId('back-to-products').click();
     await produtos.estaAberta();
+  });
+
+  test('TC-38 adicionar pela página de detalhe', async ({ page }) => {
+    await produtos.item('Sauce Labs Bolt T-Shirt').getByTestId('inventory-item-name').click();
+    await page.getByRole('button', { name: 'Add to cart' }).click();
+    await expect(page.getByRole('button', { name: 'Remove' })).toBeVisible();
+    await expect(produtos.contadorCarrinho()).toHaveText('1');
+  });
+
+  test('TC-39 clicar na imagem abre o detalhe', async ({ page }) => {
+    await produtos.item('Sauce Labs Onesie').locator('img').click();
+    await expect(page.getByTestId('inventory-item-name')).toHaveText('Sauce Labs Onesie');
+  });
+
+  test('TC-40 ordenação continua ao voltar do detalhe', async ({ page }) => {
+    defeito('SDEMO-DF-7', 'a lista volta para Name (A to Z)');
+    await produtos.ordenarPor('hilo');
+    await produtos.nomes().first().click();
+    await page.getByTestId('back-to-products').click();
+    await expect(produtos.ordenacaoAtiva()).toHaveText('Price (high to low)');
   });
 });

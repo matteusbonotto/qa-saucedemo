@@ -14,6 +14,7 @@ export default defineConfig({
     testIdAttribute: 'data-test',
     screenshot: 'only-on-failure',
     trace: 'retain-on-failure',
+    video: 'retain-on-failure',
   },
   projects: [{ name: 'chromium', use: { ...devices['Desktop Chrome'] } }],
 });

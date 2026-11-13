@@ -25,4 +25,33 @@ test.describe('Menu e sessão', () => {
     await new MenuPage(page).clicar('Reset App State');
     await expect(produtos.contadorCarrinho()).toHaveCount(0);
   });
+
+  test('TC-29 About leva ao site da Sauce Labs', async ({ page }) => {
+    await new MenuPage(page).abrir();
+    await expect(page.getByTestId('about-sidebar-link')).toHaveAttribute('href', 'https://saucelabs.com/');
+  });
+
+  test('TC-44 abrir e fechar o menu lateral', async ({ page }) => {
+    await new MenuPage(page).abrir();
+    for (const id of ['inventory-sidebar-link', 'about-sidebar-link', 'logout-sidebar-link', 'reset-sidebar-link']) await expect(page.getByTestId(id)).toBeVisible();
+    await page.getByRole('button', { name: 'Close Menu' }).click();
+    await expect(page.getByTestId('logout-sidebar-link')).toBeHidden();
+  });
+
+  test('TC-45 All Items volta para os produtos', async ({ page }) => {
+    await new ProdutosPage(page).abrirCarrinho();
+    await new MenuPage(page).clicar('All Items');
+    await new ProdutosPage(page).estaAberta();
+  });
+
+  test('TC-46 rodapé com redes sociais e copyright', async ({ page }) => {
+    const rodape = page.locator('footer');
+    const redes = { X: 'https://x.com/saucelabs', Facebook: 'https://www.facebook.com/saucelabs', LinkedIn: 'https://www.linkedin.com/company/sauce-labs/' };
+    for (const [nome, href] of Object.entries(redes)) {
+      const link = rodape.getByRole('link', { name: nome, exact: true });
+      await expect(link).toHaveAttribute('href', href);
+      await expect(link).toHaveAttribute('target', '_blank');
+    }
+    await expect(rodape).toContainText(/© \d{4} Sauce Labs\. All Rights Reserved\./);
+  });
 });

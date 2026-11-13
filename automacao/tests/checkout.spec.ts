@@ -1,4 +1,4 @@
-import { test, expect } from '../fixtures/console';
+import { test, expect, defeito } from '../fixtures/console';
 import { LoginPage } from '../pages/LoginPage';
 import { ProdutosPage } from '../pages/ProdutosPage';
 import { CarrinhoPage } from '../pages/CarrinhoPage';
@@ -82,10 +82,35 @@ test.describe('Checkout', () => {
   });
 
   test('TC-26 checkout bloqueado com carrinho vazio', async ({ page }) => {
-    test.info().annotations.push({ type: 'defeito', description: 'SDEMO-DF-10' });
-    test.fail(true, 'Defeito conhecido SDEMO-DF-10: o checkout abre com o carrinho vazio');
+    defeito('SDEMO-DF-1', 'o checkout abre com o carrinho vazio');
     await produtos.abrirCarrinho();
     await carrinho.irParaCheckout();
     await expect(page).toHaveURL(/cart\.html/);
+  });
+
+  test('TC-41 resumo mostra pagamento e entrega', async ({ page }) => {
+    await irParaCheckout('Sauce Labs Backpack');
+    await checkout.preencher();
+    await checkout.continuar();
+    await expect(page.getByTestId('payment-info-value')).toHaveText('SauceCard #31337');
+    await expect(page.getByTestId('shipping-info-value')).toHaveText('Free Pony Express Delivery!');
+  });
+
+  test('TC-42 CEP com letras é recusado', async ({ page }) => {
+    defeito('SDEMO-DF-8', 'o CEP aceita letras');
+    await irParaCheckout('Sauce Labs Backpack');
+    await checkout.preencher({ ...CLIENTE, cep: 'ABCDE' });
+    await checkout.continuar();
+    await expect(checkout.erro()).toBeVisible();
+    await expect(page).toHaveURL(/checkout-step-one\.html/);
+  });
+
+  test('TC-43 campos só com espaços são recusados', async ({ page }) => {
+    defeito('SDEMO-DF-9', 'nome, sobrenome e CEP aceitam só espaços');
+    await irParaCheckout('Sauce Labs Backpack');
+    await checkout.preencher({ nome: ' ', sobrenome: ' ', cep: ' ' });
+    await checkout.continuar();
+    await expect(checkout.erro()).toBeVisible();
+    await expect(page).toHaveURL(/checkout-step-one\.html/);
   });
 });
