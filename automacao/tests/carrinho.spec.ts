@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from '../fixtures/console';
 import { LoginPage } from '../pages/LoginPage';
 import { ProdutosPage } from '../pages/ProdutosPage';
 import { CarrinhoPage } from '../pages/CarrinhoPage';
@@ -16,7 +16,7 @@ test.describe('Carrinho', () => {
 
   test('TC-14 adicionar produto pela lista', async () => {
     await produtos.adicionar('Sauce Labs Backpack');
-    await expect(produtos.item('Sauce Labs Backpack').getByRole('button')).toHaveText('Remove');
+    await expect(produtos.botao('Sauce Labs Backpack')).toHaveText('Remove');
     await expect(produtos.contadorCarrinho()).toHaveText('1');
     await produtos.abrirCarrinho();
     const item = carrinho.item('Sauce Labs Backpack');
@@ -25,9 +25,10 @@ test.describe('Carrinho', () => {
   });
 
   test('TC-15 adicionar todos os produtos', async ({ page }) => {
-    for (const botao of await page.getByRole('button', { name: 'Add to cart' }).all()) {
-      await botao.click();
-    }
+    // cada clique troca o botão para Remove, então a lista encolhe: sempre clica no primeiro que sobrou
+    const adicionar = page.getByRole('button', { name: 'Add to cart' });
+    for (let i = 0; i < 6; i++) await adicionar.first().click();
+    await expect(adicionar).toHaveCount(0);
     await expect(produtos.contadorCarrinho()).toHaveText('6');
     await produtos.abrirCarrinho();
     await expect(carrinho.itens()).toHaveCount(6);
@@ -37,7 +38,7 @@ test.describe('Carrinho', () => {
     await produtos.adicionar('Sauce Labs Bike Light');
     await expect(produtos.contadorCarrinho()).toHaveText('1');
     await produtos.remover('Sauce Labs Bike Light');
-    await expect(produtos.item('Sauce Labs Bike Light').getByRole('button')).toHaveText('Add to cart');
+    await expect(produtos.botao('Sauce Labs Bike Light')).toHaveText('Add to cart');
     await expect(produtos.contadorCarrinho()).toHaveCount(0);
   });
 
@@ -63,6 +64,6 @@ test.describe('Carrinho', () => {
     await produtos.adicionar('Sauce Labs Backpack');
     await page.reload();
     await expect(produtos.contadorCarrinho()).toHaveText('1');
-    await expect(produtos.item('Sauce Labs Backpack').getByRole('button')).toHaveText('Remove');
+    await expect(produtos.botao('Sauce Labs Backpack')).toHaveText('Remove');
   });
 });

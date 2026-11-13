@@ -29,6 +29,19 @@ Os casos com defeito conhecido (DF-10, DF-13 a DF-17) usam `test.fail()`.
 Como este projeto é de estudo e os defeitos não serão corrigidos, eles ficam marcados como
 falha esperada: a suíte continua verde e, se algum deles começar a passar, o Playwright avisa.
 
+Todo teste vigia o console do navegador (`automacao/fixtures/console.ts`): erro de JavaScript não tratado
+reprova o teste, mesmo que a tela pareça certa (é assim que o `TypeError` do `error_user` aparece no relatório).
+`console.error` vai anexado ao resultado, sem reprovar, porque o site gera erros de serviços de terceiros.
+
+## Lições para um projeto real
+
+O SauceDemo tem defeitos de propósito. Num sistema de produção, o que este projeto ensina vira prática:
+
+- **Um problema, um defeito.** O mesmo bug visto em execuções diferentes é vinculado ao defeito aberto, não registrado de novo. No QAlor o defeito duplicado recebe o status *Duplicado* e aponta para o principal; falhas da mesma causa (ex.: as do `problem_user`) ficam agrupadas num defeito pai. Assim a densidade de defeitos não infla.
+- **Shift-left nas validações.** CEP com letras, campos só com espaços e checkout com carrinho vazio deveriam ser barrados no refinamento da história, com critérios de aceite de máscara e sanitização no front e no back.
+- **Console limpo como critério de saída.** Erro de JavaScript não tratado é defeito, mesmo sem quebra visual.
+- **Personas de erro só em homologação.** Contas como `problem_user` e `error_user` são úteis em QA/staging e não devem existir no ambiente de produção dos clientes.
+
 ## Levar o resultado para o QAlor
 
 Depois dos testes, rode `npm run qalor`. Ele gera `resultados/qalor-execucao.json`.

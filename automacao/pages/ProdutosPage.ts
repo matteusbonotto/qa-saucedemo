@@ -13,8 +13,12 @@ export class ProdutosPage {
   contadorCarrinho = () => this.page.getByTestId('shopping-cart-badge');
 
   item(nome: string) {
-    return this.itens().filter({ hasText: nome });
+    // pelo nome exato: a descrição de outros produtos também cita "Sauce Labs Backpack"
+    return this.itens().filter({ has: this.page.getByTestId('inventory-item-name').getByText(nome, { exact: true }) });
   }
+
+  // só o <button>: a imagem e o título do produto também têm role="button"
+  botao = (nome: string) => this.item(nome).locator('button');
 
   async estaAberta() {
     await expect(this.page).toHaveURL(/inventory\.html/);
