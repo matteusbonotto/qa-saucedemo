@@ -1,0 +1,38 @@
+﻿"ID";"Título";"Severidade";"Prioridade";"Caso";"Passos";"Esperado";"Obtido"
+"SDEMO-DF-1";"Checkout permite finalizar pedido com o carrinho vazio";"Grave";"Média";"SDEMO-TC-26";"Logar com standard_user
+Abrir o carrinho sem adicionar produtos
+Clicar em Checkout
+Preencher Matheus / Bonotto / 01001-000 e clicar em Continue
+Clicar em Finish";"A loja não deveria deixar seguir para o checkout (ou finalizar) sem nenhum produto no carrinho.";"Com o carrinho vazio, o botão Checkout funciona, o resumo mostra Total $0.00 e o Finish mostra ""Thank you for your order!""."
+"SDEMO-DF-2";"problem_user: todos os produtos mostram a mesma imagem";"Leve";"Baixa";"SDEMO-TC-30";"Logar com problem_user
+Olhar as imagens da lista de produtos";"Cada produto deve mostrar a sua própria imagem.";"Os 6 produtos aparecem com a mesma imagem (um cachorro), diferente do produto."
+"SDEMO-DF-3";"problem_user: ordenação da lista não funciona";"Grave";"Média";"SDEMO-TC-31";"Logar com problem_user
+Escolher Price (low to high) no filtro
+Conferir a ordem dos preços";"Ao escolher Price (low to high) a lista deve ficar do menor para o maior preço.";"A opção é escolhida, mas a lista continua na mesma ordem."
+"SDEMO-DF-4";"problem_user: campo Last Name não aceita o texto digitado no checkout";"Crítica";"Alta";"SDEMO-TC-32";"Logar com problem_user
+Adicionar Sauce Labs Backpack e abrir o carrinho
+Clicar em Checkout
+Digitar Matheus, Bonotto e 01001-000
+Clicar em Continue";"O texto digitado em Last Name deve ficar no campo Last Name e o checkout deve seguir para o resumo.";"O campo Last Name não fica preenchido e ao clicar em Continue aparece ""Error: Last Name is required"", travando a compra."
+"SDEMO-DF-5";"error_user: botão Finish não conclui o pedido";"Crítica";"Alta";"SDEMO-TC-33";"Logar com error_user
+Adicionar Sauce Labs Backpack
+Seguir o checkout até o resumo
+Clicar em Finish";"Clicar em Finish deve mostrar ""Thank you for your order!"".";"Clicar em Finish não leva para a página de pedido concluído."
+"SDEMO-DF-6";"performance_glitch_user: login demora vários segundos para mostrar os produtos";"Leve";"Média";"SDEMO-TC-34";"Logar com performance_glitch_user
+Medir o tempo até aparecer o título Products";"A lista de produtos deve aparecer em até 2 segundos depois do login (critério do plano).";"A página fica carregando por cerca de 5 segundos antes de mostrar Products."
+"SDEMO-DF-7";"Ordenação volta para Name (A to Z) ao sair do detalhe do produto";"Leve";"Baixa";"SDEMO-TC-40";"Logar com standard_user
+Escolher Price (high to low)
+Abrir qualquer produto
+Clicar em Back to products";"A lista deve continuar na ordenação escolhida (Price high to low) ao voltar do detalhe.";"Ao clicar em ""Back to products"" a lista volta para Name (A to Z) e o filtro também."
+"SDEMO-DF-8";"Campo Zip/Postal Code aceita letras";"Leve";"Baixa";"SDEMO-TC-42";"Logar com standard_user
+Adicionar um produto e ir para o checkout
+Preencher Matheus / Bonotto / ABCDE
+Clicar em Continue";"O sistema deve recusar um CEP só com letras e mostrar mensagem de formato inválido.";"Com ""ABCDE"" no Zip/Postal Code o Continue segue para o resumo do pedido sem nenhum aviso."
+"SDEMO-DF-9";"Checkout aceita First Name, Last Name e Zip só com espaços";"Grave";"Média";"SDEMO-TC-43";"Logar com standard_user
+Adicionar um produto e ir para o checkout
+Digitar um espaço em First Name, Last Name e Zip/Postal Code
+Clicar em Continue";"Campos preenchidos só com espaços devem ser tratados como vazios e mostrar a mensagem de campo obrigatório.";"Com um espaço em cada campo o Continue segue para o resumo, e o pedido pode ser finalizado sem nome nem CEP."
+"SDEMO-DF-10";"visual_user: imagem, preços e botão diferentes do standard_user";"Grave";"Média";"SDEMO-TC-47";"Logar com standard_user e anotar imagens e preços
+Fazer logout
+Logar com visual_user
+Comparar a lista de produtos";"A lista do visual_user deve ser igual à do standard_user: mesmas imagens, mesmos preços e botões alinhados.";"A Sauce Labs Backpack mostra a imagem de erro 404, os preços mudam a cada login (ex.: $0.63 em vez de $29.99) e o último botão Add to cart fica desalinhado."

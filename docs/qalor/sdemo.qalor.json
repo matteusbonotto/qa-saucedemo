@@ -1,0 +1,3217 @@
+{
+ "format": "qalor-bundle",
+ "version": 1,
+ "rev": "4",
+ "catalogs": [
+  {
+   "ref": "per:matheus",
+   "id": "pf-per-matheus",
+   "kind": "person",
+   "name": "Matheus Bonotto",
+   "role": "qa",
+   "color": "#4F3BEF",
+   "icon": "https://github.com/matteusbonotto.png",
+   "description": "QA responsável"
+  },
+  {
+   "ref": "tag:portfolio",
+   "id": "pf-tag-portfolio",
+   "kind": "tag",
+   "name": "Portfólio",
+   "color": "#C2410C",
+   "description": "Material de portfólio"
+  },
+  {
+   "ref": "c:sauce",
+   "id": "pf-c-swaglabs",
+   "kind": "client",
+   "name": "Swag Labs",
+   "color": "#E2231A",
+   "icon": "https://www.google.com/s2/favicons?sz=128&domain=saucedemo.com",
+   "description": "Loja de demonstração da Sauce Labs"
+  },
+  {
+   "ref": "c:magalu",
+   "id": "pf-c-magalu",
+   "kind": "client",
+   "name": "Magazine Luiza",
+   "color": "#0086FF",
+   "icon": "https://www.google.com/s2/favicons?sz=128&domain=magazineluiza.com.br"
+  },
+  {
+   "ref": "c:wikimedia",
+   "id": "pf-c-wikipedia",
+   "kind": "client",
+   "name": "Wikipédia",
+   "color": "#3366CC",
+   "icon": "https://www.google.com/s2/favicons?sz=128&domain=wikipedia.org",
+   "description": "Wikimedia Foundation"
+  },
+  {
+   "ref": "c:github",
+   "id": "pf-c-github",
+   "kind": "client",
+   "name": "GitHub",
+   "color": "#24292F",
+   "icon": "https://www.google.com/s2/favicons?sz=128&domain=github.com"
+  },
+  {
+   "ref": "c:bibleapi",
+   "id": "pf-c-bibleapi",
+   "kind": "client",
+   "name": "Bible API",
+   "color": "#8B5E34",
+   "icon": "https://www.google.com/s2/favicons?sz=128&domain=bible-api.com",
+   "description": "bible-api.com (open source)"
+  },
+  {
+   "ref": "p:saucedemo",
+   "id": "pf-p-swag-web",
+   "kind": "product",
+   "name": "Web app",
+   "parentRef": "c:sauce",
+   "color": "#E2231A",
+   "icon": "https://www.google.com/s2/favicons?sz=128&domain=saucedemo.com",
+   "description": "www.saucedemo.com"
+  },
+  {
+   "ref": "p:magalu",
+   "id": "pf-p-magalu-web",
+   "kind": "product",
+   "name": "Site e-commerce",
+   "parentRef": "c:magalu",
+   "color": "#0086FF",
+   "icon": "https://www.google.com/s2/favicons?sz=128&domain=magazineluiza.com.br",
+   "description": "www.magazineluiza.com.br"
+  },
+  {
+   "ref": "p:wikipedia",
+   "id": "pf-p-wiki-web",
+   "kind": "product",
+   "name": "Site",
+   "parentRef": "c:wikimedia",
+   "color": "#3366CC",
+   "icon": "https://www.google.com/s2/favicons?sz=128&domain=pt.wikipedia.org",
+   "description": "pt.wikipedia.org"
+  },
+  {
+   "ref": "p:wikiapi",
+   "id": "pf-p-wiki-api",
+   "kind": "product",
+   "name": "API (MediaWiki e REST)",
+   "parentRef": "c:wikimedia",
+   "color": "#3366CC",
+   "icon": "https://www.google.com/s2/favicons?sz=128&domain=mediawiki.org",
+   "description": "pt.wikipedia.org/w/api.php e /api/rest_v1"
+  },
+  {
+   "ref": "p:ghapi",
+   "id": "pf-p-github-api",
+   "kind": "product",
+   "name": "API REST",
+   "parentRef": "c:github",
+   "color": "#24292F",
+   "icon": "https://www.google.com/s2/favicons?sz=128&domain=docs.github.com",
+   "description": "api.github.com"
+  },
+  {
+   "ref": "p:bibleapi",
+   "id": "pf-p-bible-api",
+   "kind": "product",
+   "name": "API REST",
+   "parentRef": "c:bibleapi",
+   "color": "#8B5E34",
+   "icon": "https://www.google.com/s2/favicons?sz=128&domain=bible-api.com",
+   "description": "bible-api.com"
+  }
+ ],
+ "projects": [
+  {
+   "key": "SDEMO",
+   "name": "SauceDemo - Testes E2E",
+   "description": "Plano, casos de teste, bugs e automação com Playwright da loja de demonstração SauceDemo.",
+   "clientRef": "c:sauce",
+   "productRef": "p:saucedemo",
+   "qaRef": "per:matheus",
+   "team": [
+    "per:matheus"
+   ],
+   "startedAt": "2026-06-01",
+   "folders": [
+    {
+     "ref": "f-login",
+     "type": "case",
+     "name": "Login"
+    },
+    {
+     "ref": "f-produtos",
+     "type": "case",
+     "name": "Produtos"
+    },
+    {
+     "ref": "f-carrinho",
+     "type": "case",
+     "name": "Carrinho"
+    },
+    {
+     "ref": "f-checkout",
+     "type": "case",
+     "name": "Checkout"
+    },
+    {
+     "ref": "f-menu",
+     "type": "case",
+     "name": "Menu e sessão"
+    },
+    {
+     "ref": "f-problema",
+     "type": "case",
+     "name": "Usuários com problema"
+    }
+   ],
+   "docs": [
+    {
+     "ref": "r-login",
+     "type": "requirement",
+     "title": "Login na loja",
+     "status": "approved",
+     "data": {
+      "kind": "story",
+      "priority": "critical",
+      "asA": "cliente da Swag Labs",
+      "iWant": "entrar com usuário e senha",
+      "soThat": "acessar o catálogo de produtos",
+      "acFormat": "rule",
+      "criteria": [
+       "Usuário e senha válidos levam para a página de produtos (/inventory.html)",
+       "Usuário vazio mostra \"Epic sadface: Username is required\"",
+       "Senha vazia mostra \"Epic sadface: Password is required\"",
+       "Credenciais erradas mostram \"Epic sadface: Username and password do not match any user in this service\"",
+       "Usuário bloqueado (locked_out_user) mostra \"Epic sadface: Sorry, this user has been locked out.\"",
+       "O X da mensagem de erro fecha a mensagem"
+      ],
+      "external": "https://www.saucedemo.com"
+     }
+    },
+    {
+     "ref": "r-inventario",
+     "type": "requirement",
+     "title": "Catálogo de produtos",
+     "status": "approved",
+     "data": {
+      "kind": "story",
+      "priority": "high",
+      "asA": "cliente logado",
+      "iWant": "ver os produtos com nome, descrição, imagem e preço e ordenar a lista",
+      "soThat": "escolher o que comprar",
+      "acFormat": "rule",
+      "criteria": [
+       "São exibidos 6 produtos",
+       "Ordenação padrão é Name (A to Z)",
+       "Opções de ordenação: Name (A to Z), Name (Z to A), Price (low to high), Price (high to low)",
+       "Clicar no nome do produto abre a página de detalhe do mesmo produto",
+       "Botão \"Back to products\" volta para a lista"
+      ],
+      "external": "https://www.saucedemo.com"
+     }
+    },
+    {
+     "ref": "r-carrinho",
+     "type": "requirement",
+     "title": "Carrinho de compras",
+     "status": "approved",
+     "data": {
+      "kind": "story",
+      "priority": "critical",
+      "asA": "cliente logado",
+      "iWant": "adicionar e remover produtos do carrinho",
+      "soThat": "revisar o que vou comprar",
+      "acFormat": "rule",
+      "criteria": [
+       "Add to cart troca o botão para Remove e soma 1 no ícone do carrinho",
+       "Remove tira o produto e diminui o contador; sem itens o contador some",
+       "O carrinho lista quantidade, nome, descrição e preço de cada item",
+       "Continue Shopping volta para os produtos mantendo os itens",
+       "Os itens continuam no carrinho depois de recarregar a página"
+      ],
+      "external": "https://www.saucedemo.com"
+     }
+    },
+    {
+     "ref": "r-checkout",
+     "type": "requirement",
+     "title": "Checkout",
+     "status": "approved",
+     "data": {
+      "kind": "story",
+      "priority": "critical",
+      "asA": "cliente com itens no carrinho",
+      "iWant": "informar meus dados e finalizar o pedido",
+      "soThat": "concluir a compra",
+      "acFormat": "rule",
+      "criteria": [
+       "First Name, Last Name e Zip/Postal Code são obrigatórios, com as mensagens \"Error: First Name is required\", \"Error: Last Name is required\" e \"Error: Postal Code is required\"",
+       "O resumo mostra os itens, Item total, Tax (8%) e Total",
+       "Finish mostra \"Thank you for your order!\" e esvazia o carrinho",
+       "Cancel no passo 1 volta para o carrinho e no passo 2 volta para os produtos"
+      ],
+      "external": "https://www.saucedemo.com"
+     }
+    },
+    {
+     "ref": "r-sessao",
+     "type": "requirement",
+     "title": "Menu e sessão",
+     "status": "approved",
+     "data": {
+      "kind": "story",
+      "priority": "high",
+      "asA": "cliente logado",
+      "iWant": "usar o menu lateral",
+      "soThat": "sair da conta ou limpar o estado da loja",
+      "acFormat": "rule",
+      "criteria": [
+       "Logout volta para a tela de login",
+       "Depois do logout, acessar /inventory.html direto mostra \"Epic sadface: You can only access '/inventory.html' when you are logged in.\"",
+       "Reset App State limpa o carrinho",
+       "About leva para o site da Sauce Labs"
+      ],
+      "external": "https://www.saucedemo.com"
+     }
+    },
+    {
+     "ref": "k-checkout",
+     "type": "risk",
+     "title": "Cliente não conseguir finalizar a compra",
+     "status": "mitigating",
+     "data": {
+      "kind": "product",
+      "likelihood": 3,
+      "impact": 5,
+      "quality": [
+       "functional-suitability"
+      ],
+      "response": "mitigate",
+      "thoroughness": "broad",
+      "cases": [
+       "c-chk-feliz",
+       "c-chk-total",
+       "c-err-finish"
+      ],
+      "owner": "Matheus Bonotto",
+      "notes": "Checkout e carrinho com mais casos e no smoke. Rodar a regressão inteira a cada mudança."
+     }
+    },
+    {
+     "ref": "k-login",
+     "type": "risk",
+     "title": "Login falhar ou deixar entrar quem não deveria",
+     "status": "mitigating",
+     "data": {
+      "kind": "product",
+      "likelihood": 2,
+      "impact": 5,
+      "quality": [
+       "functional-suitability",
+       "security"
+      ],
+      "response": "mitigate",
+      "thoroughness": "broad",
+      "cases": [
+       "c-login-ok",
+       "c-login-bloqueado",
+       "c-menu-logout"
+      ],
+      "owner": "Matheus Bonotto",
+      "notes": "Casos para cada usuário de teste e para acesso direto sem login."
+     }
+    },
+    {
+     "ref": "k-total",
+     "type": "risk",
+     "title": "Valor total ou taxa calculados errado",
+     "status": "mitigating",
+     "data": {
+      "kind": "product",
+      "likelihood": 2,
+      "impact": 4,
+      "quality": [
+       "functional-suitability"
+      ],
+      "response": "mitigate",
+      "thoroughness": "broad",
+      "cases": [
+       "c-chk-total"
+      ],
+      "owner": "Matheus Bonotto",
+      "notes": "Conferir Item total, Tax e Total com mais de um produto."
+     }
+    },
+    {
+     "ref": "k-flaky",
+     "type": "risk",
+     "title": "Testes automatizados instáveis por depender de site público",
+     "status": "mitigating",
+     "data": {
+      "kind": "project",
+      "likelihood": 3,
+      "impact": 2,
+      "quality": [
+       "reliability"
+      ],
+      "response": "mitigate",
+      "thoroughness": "broad",
+      "cases": [],
+      "owner": "Matheus Bonotto",
+      "notes": "Usar data-test como localizador, sem sleeps fixos, retries só no CI e trace na primeira falha."
+     }
+    },
+    {
+     "ref": "c-login-ok",
+     "type": "case",
+     "title": "Validar login com credenciais válidas (standard_user)",
+     "status": "approved",
+     "folderRef": "f-login",
+     "data": {
+      "objective": "Garantir que um usuário válido acessa a lista de produtos.",
+      "basis": [
+       "r-login"
+      ],
+      "priority": "critical",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "ep",
+      "category": [
+       "tt-functional",
+       "tt-smoke"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está na tela de login"
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário informa usuário e senha válidos e clica em Login",
+        "data": "standard_user / secret_sauce",
+        "expected": "o sistema exibe a página \"Products\" (/inventory.html)"
+       }
+      ],
+      "postconditions": [],
+      "automation": "automated",
+      "regression": "yes",
+      "estimate": 2
+     }
+    },
+    {
+     "ref": "c-login-user-vazio",
+     "type": "case",
+     "title": "Validar mensagem de erro ao fazer login sem informar o usuário",
+     "status": "approved",
+     "folderRef": "f-login",
+     "data": {
+      "objective": "Partição inválida: campo Username vazio.",
+      "basis": [
+       "r-login"
+      ],
+      "priority": "high",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "ep",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está na tela de login"
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário informa apenas a senha e clica em Login",
+        "data": "secret_sauce",
+        "expected": "o sistema exibe \"Epic sadface: Username is required\""
+       }
+      ],
+      "postconditions": [],
+      "automation": "automated",
+      "regression": "yes",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-login-senha-vazia",
+     "type": "case",
+     "title": "Validar mensagem de erro ao fazer login sem informar a senha",
+     "status": "approved",
+     "folderRef": "f-login",
+     "data": {
+      "objective": "Partição inválida: campo Password vazio.",
+      "basis": [
+       "r-login"
+      ],
+      "priority": "high",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "ep",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está na tela de login"
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário informa apenas o usuário e clica em Login",
+        "data": "standard_user",
+        "expected": "o sistema exibe \"Epic sadface: Password is required\""
+       }
+      ],
+      "postconditions": [],
+      "automation": "automated",
+      "regression": "yes",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-login-senha-errada",
+     "type": "case",
+     "title": "Validar mensagem de erro ao fazer login com senha incorreta",
+     "status": "approved",
+     "folderRef": "f-login",
+     "data": {
+      "objective": "Credenciais que não conferem não devem dar acesso.",
+      "basis": [
+       "r-login"
+      ],
+      "priority": "high",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "ep",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está na tela de login"
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário informa um usuário válido com senha incorreta e clica em Login",
+        "data": "standard_user / senha123",
+        "expected": "o sistema exibe \"Epic sadface: Username and password do not match any user in this service\" e permanece na tela de login"
+       }
+      ],
+      "postconditions": [],
+      "automation": "automated",
+      "regression": "yes",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-login-bloqueado",
+     "type": "case",
+     "title": "Validar bloqueio de acesso para usuário bloqueado (locked_out_user)",
+     "status": "approved",
+     "folderRef": "f-login",
+     "data": {
+      "objective": "Usuário bloqueado não deve acessar a loja.",
+      "basis": [
+       "r-login"
+      ],
+      "priority": "high",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "decision-table",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está na tela de login"
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário faz login com o usuário bloqueado",
+        "data": "locked_out_user / secret_sauce",
+        "expected": "o sistema exibe \"Epic sadface: Sorry, this user has been locked out.\" e não libera o acesso"
+       }
+      ],
+      "postconditions": [],
+      "automation": "automated",
+      "regression": "yes",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-login-fechar-erro",
+     "type": "case",
+     "title": "Validar fechamento da mensagem de erro do login",
+     "status": "approved",
+     "folderRef": "f-login",
+     "data": {
+      "objective": "O botão X deve fechar a mensagem de erro.",
+      "basis": [
+       "r-login"
+      ],
+      "priority": "low",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "error-guessing",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está na tela de login"
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário clica em Login com os campos vazios",
+        "data": "",
+        "expected": "o sistema exibe a mensagem de erro"
+       },
+       {
+        "action": "o usuário clica no X da mensagem",
+        "data": "",
+        "expected": "a mensagem de erro deixa de ser exibida"
+       }
+      ],
+      "postconditions": [],
+      "automation": "automated",
+      "regression": "yes",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-login-case",
+     "type": "case",
+     "title": "Validar que o usuário diferencia letras maiúsculas e minúsculas",
+     "status": "approved",
+     "folderRef": "f-login",
+     "data": {
+      "objective": "Verificar se o login é case sensitive.",
+      "basis": [
+       "r-login"
+      ],
+      "priority": "low",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "error-guessing",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está na tela de login"
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário faz login com o usuário em maiúsculas",
+        "data": "STANDARD_USER / secret_sauce",
+        "expected": "o sistema recusa o login com a mensagem de credenciais inválidas"
+       }
+      ],
+      "postconditions": [],
+      "automation": "automated",
+      "regression": "yes",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-inv-lista",
+     "type": "case",
+     "title": "Validar exibição dos 6 produtos com nome, descrição, preço e botão de compra",
+     "status": "approved",
+     "folderRef": "f-produtos",
+     "data": {
+      "objective": "Conferir a quantidade e o conteúdo dos cards.",
+      "basis": [
+       "r-inventario"
+      ],
+      "priority": "high",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "ep",
+      "category": [
+       "tt-functional",
+       "tt-smoke"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está logado com \"standard_user\""
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário acessa a página de produtos",
+        "data": "",
+        "expected": "o sistema exibe 6 produtos, cada um com imagem, nome, descrição, preço e botão \"Add to cart\""
+       }
+      ],
+      "postconditions": [],
+      "automation": "automated",
+      "regression": "yes",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-inv-az",
+     "type": "case",
+     "title": "Validar ordenação padrão dos produtos por nome (A a Z)",
+     "status": "approved",
+     "folderRef": "f-produtos",
+     "data": {
+      "objective": "Conferir a ordem inicial da lista.",
+      "basis": [
+       "r-inventario"
+      ],
+      "priority": "medium",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "ep",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está logado com \"standard_user\""
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário acessa a página de produtos",
+        "data": "",
+        "expected": "o filtro mostra \"Name (A to Z)\" e os produtos estão em ordem alfabética, começando por \"Sauce Labs Backpack\""
+       }
+      ],
+      "postconditions": [],
+      "automation": "automated",
+      "regression": "yes",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-inv-za",
+     "type": "case",
+     "title": "Validar ordenação dos produtos por nome (Z a A)",
+     "status": "approved",
+     "folderRef": "f-produtos",
+     "data": {
+      "objective": "Conferir a ordenação decrescente por nome.",
+      "basis": [
+       "r-inventario"
+      ],
+      "priority": "medium",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "ep",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está logado com \"standard_user\""
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário seleciona a ordenação",
+        "data": "Name (Z to A)",
+        "expected": "os produtos ficam em ordem alfabética decrescente, começando por \"Test.allTheThings() T-Shirt (Red)\""
+       }
+      ],
+      "postconditions": [],
+      "automation": "automated",
+      "regression": "yes",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-inv-preco-asc",
+     "type": "case",
+     "title": "Validar ordenação dos produtos por preço (menor para maior)",
+     "status": "approved",
+     "folderRef": "f-produtos",
+     "data": {
+      "objective": "Conferir a ordenação crescente por preço.",
+      "basis": [
+       "r-inventario"
+      ],
+      "priority": "high",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "ep",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está logado com \"standard_user\""
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário seleciona a ordenação",
+        "data": "Price (low to high)",
+        "expected": "o primeiro produto é \"Sauce Labs Onesie\" ($7.99) e o último é \"Sauce Labs Fleece Jacket\" ($49.99)"
+       }
+      ],
+      "postconditions": [],
+      "automation": "automated",
+      "regression": "yes",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-inv-preco-desc",
+     "type": "case",
+     "title": "Validar ordenação dos produtos por preço (maior para menor)",
+     "status": "approved",
+     "folderRef": "f-produtos",
+     "data": {
+      "objective": "Conferir a ordenação decrescente por preço.",
+      "basis": [
+       "r-inventario"
+      ],
+      "priority": "medium",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "ep",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está logado com \"standard_user\""
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário seleciona a ordenação",
+        "data": "Price (high to low)",
+        "expected": "o primeiro produto é \"Sauce Labs Fleece Jacket\" ($49.99) e o último é \"Sauce Labs Onesie\" ($7.99)"
+       }
+      ],
+      "postconditions": [],
+      "automation": "automated",
+      "regression": "yes",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-inv-detalhe",
+     "type": "case",
+     "title": "Validar abertura do detalhe do produto e retorno à lista",
+     "status": "approved",
+     "folderRef": "f-produtos",
+     "data": {
+      "objective": "O detalhe deve mostrar o mesmo produto clicado.",
+      "basis": [
+       "r-inventario"
+      ],
+      "priority": "medium",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "ep",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está logado com \"standard_user\""
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário clica no nome do produto",
+        "data": "Sauce Labs Backpack",
+        "expected": "o sistema exibe o detalhe com o nome \"Sauce Labs Backpack\" e o preço $29.99"
+       },
+       {
+        "action": "o usuário clica em \"Back to products\"",
+        "data": "",
+        "expected": "o sistema volta para a lista de produtos"
+       }
+      ],
+      "postconditions": [],
+      "automation": "automated",
+      "regression": "yes",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-cart-add",
+     "type": "case",
+     "title": "Validar inclusão de produto no carrinho pela lista de produtos",
+     "status": "approved",
+     "folderRef": "f-carrinho",
+     "data": {
+      "objective": "Conferir o botão Add to cart e o contador do carrinho.",
+      "basis": [
+       "r-carrinho"
+      ],
+      "priority": "critical",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "ep",
+      "category": [
+       "tt-functional",
+       "tt-smoke"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está logado com \"standard_user\""
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário clica em \"Add to cart\" no produto",
+        "data": "Sauce Labs Backpack",
+        "expected": "o botão muda para \"Remove\" e o carrinho mostra 1"
+       },
+       {
+        "action": "o usuário abre o carrinho",
+        "data": "",
+        "expected": "o carrinho lista \"Sauce Labs Backpack\" com quantidade 1 e preço $29.99"
+       }
+      ],
+      "postconditions": [],
+      "automation": "automated",
+      "regression": "yes",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-cart-varios",
+     "type": "case",
+     "title": "Validar inclusão de todos os produtos no carrinho",
+     "status": "approved",
+     "folderRef": "f-carrinho",
+     "data": {
+      "objective": "Valor limite superior: os 6 produtos.",
+      "basis": [
+       "r-carrinho"
+      ],
+      "priority": "medium",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "bva",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está logado com \"standard_user\""
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário adiciona os 6 produtos ao carrinho",
+        "data": "",
+        "expected": "o contador do carrinho mostra 6"
+       },
+       {
+        "action": "o usuário abre o carrinho",
+        "data": "",
+        "expected": "o carrinho lista os 6 produtos"
+       }
+      ],
+      "postconditions": [],
+      "automation": "automated",
+      "regression": "yes",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-cart-remover-lista",
+     "type": "case",
+     "title": "Validar remoção de produto do carrinho pela lista de produtos",
+     "status": "approved",
+     "folderRef": "f-carrinho",
+     "data": {
+      "objective": "Conferir o botão Remove na lista.",
+      "basis": [
+       "r-carrinho"
+      ],
+      "priority": "medium",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "ep",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está logado com \"standard_user\""
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário adiciona o produto ao carrinho",
+        "data": "Sauce Labs Bike Light",
+        "expected": "o contador mostra 1"
+       },
+       {
+        "action": "o usuário clica em \"Remove\" no mesmo produto",
+        "data": "",
+        "expected": "o botão volta para \"Add to cart\" e o contador deixa de ser exibido"
+       }
+      ],
+      "postconditions": [],
+      "automation": "automated",
+      "regression": "yes",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-cart-remover-carrinho",
+     "type": "case",
+     "title": "Validar remoção de produto dentro da página do carrinho",
+     "status": "approved",
+     "folderRef": "f-carrinho",
+     "data": {
+      "objective": "Conferir a remoção na página do carrinho.",
+      "basis": [
+       "r-carrinho"
+      ],
+      "priority": "medium",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "ep",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está logado com \"standard_user\""
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário adiciona dois produtos e abre o carrinho",
+        "data": "Sauce Labs Backpack e Sauce Labs Bike Light",
+        "expected": "o carrinho lista 2 produtos"
+       },
+       {
+        "action": "o usuário clica em \"Remove\" no \"Sauce Labs Bike Light\"",
+        "data": "",
+        "expected": "apenas o \"Sauce Labs Backpack\" continua no carrinho e o contador mostra 1"
+       }
+      ],
+      "postconditions": [],
+      "automation": "automated",
+      "regression": "yes",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-cart-continuar",
+     "type": "case",
+     "title": "Validar que \"Continue Shopping\" volta aos produtos mantendo o carrinho",
+     "status": "approved",
+     "folderRef": "f-carrinho",
+     "data": {
+      "objective": "Os itens devem continuar no carrinho.",
+      "basis": [
+       "r-carrinho"
+      ],
+      "priority": "low",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "ep",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está logado com \"standard_user\"",
+       "que o produto \"Sauce Labs Backpack\" está no carrinho"
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário clica em \"Continue Shopping\" no carrinho",
+        "data": "",
+        "expected": "o sistema exibe a lista de produtos e o contador continua 1"
+       }
+      ],
+      "postconditions": [],
+      "automation": "automated",
+      "regression": "yes",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-cart-reload",
+     "type": "case",
+     "title": "Validar que o carrinho é mantido após recarregar a página",
+     "status": "approved",
+     "folderRef": "f-carrinho",
+     "data": {
+      "objective": "O carrinho fica salvo no navegador.",
+      "basis": [
+       "r-carrinho"
+      ],
+      "priority": "medium",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "error-guessing",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está logado com \"standard_user\"",
+       "que o produto \"Sauce Labs Backpack\" está no carrinho"
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário recarrega a página (F5)",
+        "data": "",
+        "expected": "o contador continua 1 e o botão do produto continua \"Remove\""
+       }
+      ],
+      "postconditions": [],
+      "automation": "automated",
+      "regression": "yes",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-chk-feliz",
+     "type": "case",
+     "title": "Validar finalização de compra com um produto (fluxo principal)",
+     "status": "approved",
+     "folderRef": "f-checkout",
+     "data": {
+      "objective": "Caminho feliz do checkout.",
+      "basis": [
+       "r-checkout"
+      ],
+      "priority": "critical",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "ep",
+      "category": [
+       "tt-functional",
+       "tt-smoke"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está logado com \"standard_user\"",
+       "que o produto \"Sauce Labs Backpack\" está no carrinho"
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário abre o carrinho e clica em \"Checkout\"",
+        "data": "",
+        "expected": "o sistema exibe o formulário \"Checkout: Your Information\""
+       },
+       {
+        "action": "o usuário preenche os dados e clica em \"Continue\"",
+        "data": "Matheus / Bonotto / 01001-000",
+        "expected": "o resumo mostra Item total $29.99, Tax $2.40 e Total $32.39"
+       },
+       {
+        "action": "o usuário clica em \"Finish\"",
+        "data": "",
+        "expected": "o sistema exibe \"Thank you for your order!\" e o carrinho fica vazio"
+       },
+       {
+        "action": "o usuário clica em \"Back Home\"",
+        "data": "",
+        "expected": "o sistema volta para a lista de produtos"
+       }
+      ],
+      "postconditions": [],
+      "automation": "automated",
+      "regression": "yes",
+      "estimate": 4
+     }
+    },
+    {
+     "ref": "c-chk-total",
+     "type": "case",
+     "title": "Validar cálculo do total com vários produtos e taxa de 8%",
+     "status": "approved",
+     "folderRef": "f-checkout",
+     "data": {
+      "objective": "Conferir a soma dos itens e o cálculo da taxa.",
+      "basis": [
+       "r-checkout"
+      ],
+      "priority": "high",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "ep",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está logado com \"standard_user\""
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário segue até o resumo do pedido com dois produtos",
+        "data": "Sauce Labs Backpack ($29.99) + Sauce Labs Bolt T-Shirt ($15.99)",
+        "expected": "o resumo mostra Item total $45.98, Tax $3.68 e Total $49.66"
+       }
+      ],
+      "postconditions": [],
+      "automation": "automated",
+      "regression": "yes",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-chk-nome",
+     "type": "case",
+     "title": "Validar obrigatoriedade do campo First Name no checkout",
+     "status": "approved",
+     "folderRef": "f-checkout",
+     "data": {
+      "objective": "Partição inválida: First Name vazio.",
+      "basis": [
+       "r-checkout"
+      ],
+      "priority": "high",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "ep",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está logado com \"standard_user\"",
+       "que o produto \"Sauce Labs Backpack\" está no carrinho",
+       "que o usuário está no passo 1 do checkout"
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário deixa First Name vazio e clica em \"Continue\"",
+        "data": "Last Name: Bonotto / Zip: 01001-000",
+        "expected": "o sistema exibe \"Error: First Name is required\""
+       }
+      ],
+      "postconditions": [],
+      "automation": "automated",
+      "regression": "yes",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-chk-sobrenome",
+     "type": "case",
+     "title": "Validar obrigatoriedade do campo Last Name no checkout",
+     "status": "approved",
+     "folderRef": "f-checkout",
+     "data": {
+      "objective": "Partição inválida: Last Name vazio.",
+      "basis": [
+       "r-checkout"
+      ],
+      "priority": "high",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "ep",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está logado com \"standard_user\"",
+       "que o produto \"Sauce Labs Backpack\" está no carrinho",
+       "que o usuário está no passo 1 do checkout"
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário deixa Last Name vazio e clica em \"Continue\"",
+        "data": "First Name: Matheus / Zip: 01001-000",
+        "expected": "o sistema exibe \"Error: Last Name is required\""
+       }
+      ],
+      "postconditions": [],
+      "automation": "automated",
+      "regression": "yes",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-chk-cep",
+     "type": "case",
+     "title": "Validar obrigatoriedade do campo Zip/Postal Code no checkout",
+     "status": "approved",
+     "folderRef": "f-checkout",
+     "data": {
+      "objective": "Partição inválida: CEP vazio.",
+      "basis": [
+       "r-checkout"
+      ],
+      "priority": "high",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "ep",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está logado com \"standard_user\"",
+       "que o produto \"Sauce Labs Backpack\" está no carrinho",
+       "que o usuário está no passo 1 do checkout"
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário deixa Zip/Postal Code vazio e clica em \"Continue\"",
+        "data": "First Name: Matheus / Last Name: Bonotto",
+        "expected": "o sistema exibe \"Error: Postal Code is required\""
+       }
+      ],
+      "postconditions": [],
+      "automation": "automated",
+      "regression": "yes",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-chk-cancelar",
+     "type": "case",
+     "title": "Validar cancelamento do checkout nos passos 1 e 2",
+     "status": "approved",
+     "folderRef": "f-checkout",
+     "data": {
+      "objective": "Conferir os botões Cancel.",
+      "basis": [
+       "r-checkout"
+      ],
+      "priority": "low",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "ep",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está logado com \"standard_user\"",
+       "que o produto \"Sauce Labs Backpack\" está no carrinho"
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário clica em \"Cancel\" no passo 1",
+        "data": "",
+        "expected": "o sistema volta para o carrinho com os itens"
+       },
+       {
+        "action": "o usuário vai até o passo 2 e clica em \"Cancel\"",
+        "data": "",
+        "expected": "o sistema volta para a lista de produtos e os itens continuam no carrinho"
+       }
+      ],
+      "postconditions": [],
+      "automation": "automated",
+      "regression": "yes",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-chk-vazio",
+     "type": "case",
+     "title": "Validar bloqueio do checkout com o carrinho vazio",
+     "status": "approved",
+     "folderRef": "f-checkout",
+     "data": {
+      "objective": "A loja não deve permitir finalizar pedido sem itens.",
+      "basis": [
+       "r-checkout"
+      ],
+      "priority": "medium",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "error-guessing",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está logado com \"standard_user\"",
+       "que o carrinho está vazio"
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário abre o carrinho vazio e clica em \"Checkout\"",
+        "data": "",
+        "expected": "o sistema impede seguir ou avisa que o carrinho está vazio"
+       }
+      ],
+      "postconditions": [],
+      "automation": "automated",
+      "regression": "yes",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-menu-logout",
+     "type": "case",
+     "title": "Validar logout e bloqueio de acesso direto às páginas internas",
+     "status": "approved",
+     "folderRef": "f-menu",
+     "data": {
+      "objective": "Depois do logout a loja não pode ser acessada pela URL.",
+      "basis": [
+       "r-sessao"
+      ],
+      "priority": "high",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "ep",
+      "category": [
+       "tt-functional",
+       "tt-security"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está logado com \"standard_user\""
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário abre o menu e clica em \"Logout\"",
+        "data": "",
+        "expected": "o sistema volta para a tela de login"
+       },
+       {
+        "action": "o usuário acessa a URL da lista de produtos",
+        "data": "https://www.saucedemo.com/inventory.html",
+        "expected": "o sistema exibe \"Epic sadface: You can only access '/inventory.html' when you are logged in.\""
+       }
+      ],
+      "postconditions": [],
+      "automation": "automated",
+      "regression": "yes",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-menu-reset",
+     "type": "case",
+     "title": "Validar que \"Reset App State\" limpa o carrinho",
+     "status": "approved",
+     "folderRef": "f-menu",
+     "data": {
+      "objective": "Conferir a opção de resetar o estado da loja.",
+      "basis": [
+       "r-sessao"
+      ],
+      "priority": "low",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "ep",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está logado com \"standard_user\"",
+       "que o produto \"Sauce Labs Backpack\" está no carrinho"
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário abre o menu e clica em \"Reset App State\"",
+        "data": "",
+        "expected": "o contador do carrinho deixa de ser exibido"
+       }
+      ],
+      "postconditions": [],
+      "automation": "automated",
+      "regression": "yes",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-menu-about",
+     "type": "case",
+     "title": "Validar que o link \"About\" leva ao site da Sauce Labs",
+     "status": "approved",
+     "folderRef": "f-menu",
+     "data": {
+      "objective": "Conferir o link About do menu.",
+      "basis": [
+       "r-sessao"
+      ],
+      "priority": "low",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "ep",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está logado com \"standard_user\""
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário abre o menu e clica em \"About\"",
+        "data": "",
+        "expected": "o navegador abre o site saucelabs.com"
+       }
+      ],
+      "postconditions": [],
+      "automation": "candidate",
+      "regression": "no",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-prob-imagens",
+     "type": "case",
+     "title": "Validar imagens dos produtos com o usuário problem_user",
+     "status": "approved",
+     "folderRef": "f-problema",
+     "data": {
+      "objective": "Cada produto deve exibir a própria imagem.",
+      "basis": [
+       "r-inventario"
+      ],
+      "priority": "medium",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "error-guessing",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário faz login com problem_user",
+        "data": "problem_user / secret_sauce",
+        "expected": "cada um dos 6 produtos exibe a imagem correspondente"
+       }
+      ],
+      "postconditions": [],
+      "automation": "automated",
+      "regression": "no",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-prob-ordenacao",
+     "type": "case",
+     "title": "Validar ordenação por preço com o usuário problem_user",
+     "status": "approved",
+     "folderRef": "f-problema",
+     "data": {
+      "objective": "A ordenação deve funcionar para qualquer usuário.",
+      "basis": [
+       "r-inventario"
+      ],
+      "priority": "medium",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "error-guessing",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário faz login com problem_user e ordena por preço",
+        "data": "Price (low to high)",
+        "expected": "os produtos ficam do menor para o maior preço"
+       }
+      ],
+      "postconditions": [],
+      "automation": "automated",
+      "regression": "no",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-prob-sobrenome",
+     "type": "case",
+     "title": "Validar preenchimento do Last Name no checkout com o usuário problem_user",
+     "status": "approved",
+     "folderRef": "f-problema",
+     "data": {
+      "objective": "O campo Last Name deve aceitar o texto digitado.",
+      "basis": [
+       "r-checkout"
+      ],
+      "priority": "high",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "error-guessing",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está logado com \"problem_user\"",
+       "que o produto \"Sauce Labs Backpack\" está no carrinho"
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário (problem_user) preenche o passo 1 do checkout e clica em \"Continue\"",
+        "data": "Matheus / Bonotto / 01001-000",
+        "expected": "o sistema exibe o resumo do pedido"
+       }
+      ],
+      "postconditions": [],
+      "automation": "automated",
+      "regression": "no",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-err-finish",
+     "type": "case",
+     "title": "Validar finalização do pedido com o usuário error_user",
+     "status": "approved",
+     "folderRef": "f-problema",
+     "data": {
+      "objective": "O botão Finish deve concluir o pedido.",
+      "basis": [
+       "r-checkout"
+      ],
+      "priority": "high",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "error-guessing",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está logado com \"error_user\"",
+       "que o produto \"Sauce Labs Backpack\" está no carrinho"
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário (error_user) segue até o resumo e clica em \"Finish\"",
+        "data": "Matheus / Bonotto / 01001-000",
+        "expected": "o sistema exibe \"Thank you for your order!\""
+       }
+      ],
+      "postconditions": [],
+      "automation": "automated",
+      "regression": "no",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-perf-login",
+     "type": "case",
+     "title": "Validar tempo de resposta do login com o usuário performance_glitch_user",
+     "status": "approved",
+     "folderRef": "f-problema",
+     "data": {
+      "objective": "A lista de produtos deve aparecer em até 2 segundos.",
+      "basis": [
+       "r-login"
+      ],
+      "priority": "medium",
+      "level": "system",
+      "types": [
+       "non-functional"
+      ],
+      "technique": "error-guessing",
+      "category": [
+       "tt-performance"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário faz login com performance_glitch_user",
+        "data": "performance_glitch_user / secret_sauce",
+        "expected": "a página \"Products\" é exibida em até 2 segundos"
+       }
+      ],
+      "postconditions": [],
+      "automation": "automated",
+      "regression": "no",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-login-enter",
+     "type": "case",
+     "title": "Validar login pressionando Enter no campo de senha",
+     "status": "approved",
+     "folderRef": "f-login",
+     "data": {
+      "objective": "O formulário deve ser enviado pelo teclado (acessibilidade).",
+      "basis": [
+       "r-login"
+      ],
+      "priority": "medium",
+      "level": "system",
+      "types": [
+       "functional",
+       "non-functional"
+      ],
+      "technique": "ep",
+      "category": [
+       "tt-functional",
+       "tt-a11y"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está na tela de login"
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário preenche usuário e senha e pressiona Enter",
+        "data": "standard_user / secret_sauce",
+        "expected": "o sistema exibe a página \"Products\""
+       }
+      ],
+      "postconditions": [],
+      "automation": "candidate",
+      "regression": "yes",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-login-mascara",
+     "type": "case",
+     "title": "Validar que a senha é exibida mascarada",
+     "status": "approved",
+     "folderRef": "f-login",
+     "data": {
+      "objective": "A senha não pode aparecer em texto aberto.",
+      "basis": [
+       "r-login"
+      ],
+      "priority": "medium",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "ep",
+      "category": [
+       "tt-functional",
+       "tt-security"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está na tela de login"
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário digita a senha",
+        "data": "secret_sauce",
+        "expected": "o campo Password exibe apenas caracteres mascarados (type=\"password\")"
+       }
+      ],
+      "postconditions": [],
+      "automation": "candidate",
+      "regression": "yes",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-login-sem-sessao-cart",
+     "type": "case",
+     "title": "Validar bloqueio de acesso direto ao carrinho sem login",
+     "status": "approved",
+     "folderRef": "f-login",
+     "data": {
+      "objective": "Páginas internas exigem login.",
+      "basis": [
+       "r-sessao"
+      ],
+      "priority": "high",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "error-guessing",
+      "category": [
+       "tt-functional",
+       "tt-security"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário sem login acessa a URL do carrinho",
+        "data": "https://www.saucedemo.com/cart.html",
+        "expected": "o sistema volta para o login com a mensagem \"You can only access '/cart.html' when you are logged in.\""
+       }
+      ],
+      "postconditions": [],
+      "automation": "candidate",
+      "regression": "yes",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-inv-detalhe-add",
+     "type": "case",
+     "title": "Validar inclusão no carrinho pela página de detalhe do produto",
+     "status": "approved",
+     "folderRef": "f-produtos",
+     "data": {
+      "objective": "O detalhe também deve permitir comprar.",
+      "basis": [
+       "r-inventario",
+       "r-carrinho"
+      ],
+      "priority": "medium",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "ep",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está logado com \"standard_user\""
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário abre o detalhe do produto",
+        "data": "Sauce Labs Bolt T-Shirt",
+        "expected": "o sistema exibe o botão \"Add to cart\""
+       },
+       {
+        "action": "o usuário clica em \"Add to cart\"",
+        "data": "",
+        "expected": "o botão muda para \"Remove\" e o carrinho mostra 1"
+       }
+      ],
+      "postconditions": [],
+      "automation": "candidate",
+      "regression": "yes",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-inv-imagem",
+     "type": "case",
+     "title": "Validar abertura do detalhe ao clicar na imagem do produto",
+     "status": "approved",
+     "folderRef": "f-produtos",
+     "data": {
+      "objective": "A imagem também é um link para o detalhe.",
+      "basis": [
+       "r-inventario"
+      ],
+      "priority": "low",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "ep",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está logado com \"standard_user\""
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário clica na imagem do produto",
+        "data": "Sauce Labs Onesie",
+        "expected": "o sistema exibe o detalhe do \"Sauce Labs Onesie\""
+       }
+      ],
+      "postconditions": [],
+      "automation": "candidate",
+      "regression": "yes",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-inv-ordem-mantida",
+     "type": "case",
+     "title": "Validar que a ordenação escolhida é mantida ao voltar do detalhe",
+     "status": "approved",
+     "folderRef": "f-produtos",
+     "data": {
+      "objective": "Verificar se a escolha de ordenação persiste.",
+      "basis": [
+       "r-inventario"
+      ],
+      "priority": "low",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "error-guessing",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está logado com \"standard_user\""
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário ordena por \"Price (high to low)\", abre um produto e volta",
+        "data": "",
+        "expected": "a lista continua ordenada por preço (maior para menor)"
+       }
+      ],
+      "postconditions": [],
+      "automation": "manual",
+      "regression": "no",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-chk-resumo",
+     "type": "case",
+     "title": "Validar informações de pagamento e entrega no resumo do pedido",
+     "status": "approved",
+     "folderRef": "f-checkout",
+     "data": {
+      "objective": "Conferir os dados exibidos no passo 2.",
+      "basis": [
+       "r-checkout"
+      ],
+      "priority": "medium",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "ep",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está logado com \"standard_user\"",
+       "que o produto \"Sauce Labs Backpack\" está no carrinho"
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário segue até o resumo do pedido",
+        "data": "Matheus / Bonotto / 01001-000",
+        "expected": "o resumo exibe \"SauceCard #31337\" em Payment Information e \"Free Pony Express Delivery!\" em Shipping Information"
+       }
+      ],
+      "postconditions": [],
+      "automation": "candidate",
+      "regression": "yes",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-chk-cep-formato",
+     "type": "case",
+     "title": "Validar formato aceito no campo Zip/Postal Code",
+     "status": "approved",
+     "folderRef": "f-checkout",
+     "data": {
+      "objective": "Verificar se o CEP aceita qualquer texto.",
+      "basis": [
+       "r-checkout"
+      ],
+      "priority": "low",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "ep",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está logado com \"standard_user\"",
+       "que o produto \"Sauce Labs Backpack\" está no carrinho",
+       "que o usuário está no passo 1 do checkout"
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário informa letras no CEP e clica em \"Continue\"",
+        "data": "Zip: ABCDE",
+        "expected": "o sistema informa que o CEP é inválido"
+       }
+      ],
+      "postconditions": [],
+      "automation": "manual",
+      "regression": "no",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-chk-espacos",
+     "type": "case",
+     "title": "Validar campos do checkout preenchidos só com espaços",
+     "status": "approved",
+     "folderRef": "f-checkout",
+     "data": {
+      "objective": "Espaços em branco não devem contar como preenchimento.",
+      "basis": [
+       "r-checkout"
+      ],
+      "priority": "low",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "error-guessing",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está logado com \"standard_user\"",
+       "que o produto \"Sauce Labs Backpack\" está no carrinho",
+       "que o usuário está no passo 1 do checkout"
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário preenche os 3 campos com espaços e clica em \"Continue\"",
+        "data": "\"   \" / \"   \" / \"   \"",
+        "expected": "o sistema exibe a mensagem de campo obrigatório"
+       }
+      ],
+      "postconditions": [],
+      "automation": "manual",
+      "regression": "no",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-menu-fechar",
+     "type": "case",
+     "title": "Validar abertura e fechamento do menu lateral",
+     "status": "approved",
+     "folderRef": "f-menu",
+     "data": {
+      "objective": "O menu deve abrir e fechar pelo botão X.",
+      "basis": [
+       "r-sessao"
+      ],
+      "priority": "low",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "ep",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está logado com \"standard_user\""
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário clica no botão do menu",
+        "data": "",
+        "expected": "o menu exibe All Items, About, Logout e Reset App State"
+       },
+       {
+        "action": "o usuário clica no X do menu",
+        "data": "",
+        "expected": "o menu é fechado"
+       }
+      ],
+      "postconditions": [],
+      "automation": "candidate",
+      "regression": "yes",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-menu-all-items",
+     "type": "case",
+     "title": "Validar que \"All Items\" volta para a lista de produtos",
+     "status": "approved",
+     "folderRef": "f-menu",
+     "data": {
+      "objective": "Conferir a navegação pelo menu.",
+      "basis": [
+       "r-sessao"
+      ],
+      "priority": "low",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "ep",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está logado com \"standard_user\""
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário está no carrinho, abre o menu e clica em \"All Items\"",
+        "data": "",
+        "expected": "o sistema exibe a lista de produtos"
+       }
+      ],
+      "postconditions": [],
+      "automation": "candidate",
+      "regression": "yes",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-rodape",
+     "type": "case",
+     "title": "Validar links de redes sociais e texto de copyright do rodapé",
+     "status": "approved",
+     "folderRef": "f-menu",
+     "data": {
+      "objective": "Conferir o rodapé da loja.",
+      "basis": [
+       "r-sessao"
+      ],
+      "priority": "low",
+      "level": "system",
+      "types": [
+       "functional",
+       "black-box"
+      ],
+      "technique": "ep",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [
+       "que o usuário está logado com \"standard_user\""
+      ],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário rola até o rodapé",
+        "data": "",
+        "expected": "o rodapé exibe os links de X (antigo Twitter), Facebook e LinkedIn e o texto de copyright da Sauce Labs"
+       },
+       {
+        "action": "o usuário clica no link do LinkedIn",
+        "data": "",
+        "expected": "o navegador abre a página da Sauce Labs no LinkedIn em outra aba"
+       }
+      ],
+      "postconditions": [],
+      "automation": "manual",
+      "regression": "no",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "c-visual-user",
+     "type": "case",
+     "title": "Validar layout da lista de produtos com o usuário visual_user",
+     "status": "approved",
+     "folderRef": "f-problema",
+     "data": {
+      "objective": "Encontrar diferenças visuais em relação ao standard_user.",
+      "basis": [
+       "r-inventario"
+      ],
+      "priority": "medium",
+      "level": "system",
+      "types": [
+       "non-functional"
+      ],
+      "technique": "exploratory",
+      "category": [
+       "tt-functional"
+      ],
+      "tags": [
+       "tag:portfolio"
+      ],
+      "countries": [
+       "BR"
+      ],
+      "preconditions": [],
+      "data": "",
+      "steps": [
+       {
+        "action": "o usuário faz login com visual_user e compara a tela com a do standard_user",
+        "data": "visual_user / secret_sauce",
+        "expected": "imagens, preços, botões e ícone do carrinho aparecem iguais aos do standard_user"
+       }
+      ],
+      "postconditions": [],
+      "automation": "manual",
+      "regression": "no",
+      "estimate": 3
+     }
+    },
+    {
+     "ref": "s-smoke",
+     "type": "suite",
+     "title": "Smoke - Swag Labs",
+     "status": "approved",
+     "data": {
+      "purpose": "smoke",
+      "prioritization": "risk",
+      "cases": [
+       "c-login-ok",
+       "c-inv-lista",
+       "c-cart-add",
+       "c-chk-feliz"
+      ],
+      "criteria": "Casos críticos que mostram se dá para comprar: login, listagem, carrinho e checkout feliz."
+     }
+    },
+    {
+     "ref": "s-reg",
+     "type": "suite",
+     "title": "Regressão - Swag Labs",
+     "status": "approved",
+     "data": {
+      "purpose": "regression",
+      "prioritization": "coverage",
+      "cases": [
+       "c-login-ok",
+       "c-login-user-vazio",
+       "c-login-senha-vazia",
+       "c-login-senha-errada",
+       "c-login-bloqueado",
+       "c-login-fechar-erro",
+       "c-login-case",
+       "c-inv-lista",
+       "c-inv-az",
+       "c-inv-za",
+       "c-inv-preco-asc",
+       "c-inv-preco-desc",
+       "c-inv-detalhe",
+       "c-cart-add",
+       "c-cart-varios",
+       "c-cart-remover-lista",
+       "c-cart-remover-carrinho",
+       "c-cart-continuar",
+       "c-cart-reload",
+       "c-chk-feliz",
+       "c-chk-total",
+       "c-chk-nome",
+       "c-chk-sobrenome",
+       "c-chk-cep",
+       "c-chk-cancelar",
+       "c-chk-vazio",
+       "c-menu-logout",
+       "c-menu-reset",
+       "c-login-enter",
+       "c-login-mascara",
+       "c-login-sem-sessao-cart",
+       "c-inv-detalhe-add",
+       "c-inv-imagem",
+       "c-chk-resumo",
+       "c-menu-fechar",
+       "c-menu-all-items"
+      ],
+      "criteria": "Todos os casos com standard_user marcados para regressão."
+     }
+    },
+    {
+     "ref": "s-prob",
+     "type": "suite",
+     "title": "Usuários com problema",
+     "status": "approved",
+     "data": {
+      "purpose": "confirmation",
+      "prioritization": "risk",
+      "cases": [
+       "c-prob-imagens",
+       "c-prob-ordenacao",
+       "c-prob-sobrenome",
+       "c-err-finish",
+       "c-perf-login",
+       "c-visual-user"
+      ],
+      "criteria": "Casos que exploram os usuários problem_user, error_user e performance_glitch_user."
+     }
+    },
+    {
+     "ref": "a-login",
+     "type": "automation",
+     "title": "tests/login.spec.ts",
+     "status": "active",
+     "data": {
+      "cases": [
+       "c-login-ok",
+       "c-login-user-vazio",
+       "c-login-senha-vazia",
+       "c-login-senha-errada",
+       "c-login-bloqueado",
+       "c-login-fechar-erro",
+       "c-login-case",
+       "c-login-enter",
+       "c-login-mascara",
+       "c-login-sem-sessao-cart"
+      ],
+      "layer": "e2e",
+      "quadrant": "q2",
+      "framework": "playwright",
+      "repo": "https://github.com/matteusbonotto/qa-saucedemo"
+     }
+    },
+    {
+     "ref": "a-produtos",
+     "type": "automation",
+     "title": "tests/produtos.spec.ts",
+     "status": "active",
+     "data": {
+      "cases": [
+       "c-inv-lista",
+       "c-inv-az",
+       "c-inv-za",
+       "c-inv-preco-asc",
+       "c-inv-preco-desc",
+       "c-inv-detalhe",
+       "c-inv-detalhe-add",
+       "c-inv-imagem",
+       "c-inv-ordem-mantida"
+      ],
+      "layer": "e2e",
+      "quadrant": "q2",
+      "framework": "playwright",
+      "repo": "https://github.com/matteusbonotto/qa-saucedemo"
+     }
+    },
+    {
+     "ref": "a-carrinho",
+     "type": "automation",
+     "title": "tests/carrinho.spec.ts",
+     "status": "active",
+     "data": {
+      "cases": [
+       "c-cart-add",
+       "c-cart-varios",
+       "c-cart-remover-lista",
+       "c-cart-remover-carrinho",
+       "c-cart-continuar",
+       "c-cart-reload"
+      ],
+      "layer": "e2e",
+      "quadrant": "q2",
+      "framework": "playwright",
+      "repo": "https://github.com/matteusbonotto/qa-saucedemo"
+     }
+    },
+    {
+     "ref": "a-checkout",
+     "type": "automation",
+     "title": "tests/checkout.spec.ts",
+     "status": "active",
+     "data": {
+      "cases": [
+       "c-chk-feliz",
+       "c-chk-total",
+       "c-chk-nome",
+       "c-chk-sobrenome",
+       "c-chk-cep",
+       "c-chk-cancelar",
+       "c-chk-vazio",
+       "c-chk-resumo",
+       "c-chk-cep-formato",
+       "c-chk-espacos"
+      ],
+      "layer": "e2e",
+      "quadrant": "q2",
+      "framework": "playwright",
+      "repo": "https://github.com/matteusbonotto/qa-saucedemo"
+     }
+    },
+    {
+     "ref": "a-menu",
+     "type": "automation",
+     "title": "tests/menu.spec.ts",
+     "status": "active",
+     "data": {
+      "cases": [
+       "c-menu-logout",
+       "c-menu-reset",
+       "c-menu-about",
+       "c-menu-fechar",
+       "c-menu-all-items",
+       "c-rodape"
+      ],
+      "layer": "e2e",
+      "quadrant": "q2",
+      "framework": "playwright",
+      "repo": "https://github.com/matteusbonotto/qa-saucedemo"
+     }
+    },
+    {
+     "ref": "a-problema",
+     "type": "automation",
+     "title": "tests/usuarios-problema.spec.ts",
+     "status": "active",
+     "data": {
+      "cases": [
+       "c-prob-imagens",
+       "c-prob-ordenacao",
+       "c-prob-sobrenome",
+       "c-err-finish",
+       "c-perf-login",
+       "c-visual-user"
+      ],
+      "layer": "e2e",
+      "quadrant": "q2",
+      "framework": "playwright",
+      "repo": "https://github.com/matteusbonotto/qa-saucedemo"
+     }
+    },
+    {
+     "ref": "t-plano",
+     "type": "plan",
+     "title": "Plano de testes - Swag Labs (SauceDemo)",
+     "status": "approved",
+     "data": {
+      "objectives": [
+       "find-defects",
+       "verify-req",
+       "confidence",
+       "reduce-risk"
+      ],
+      "inScope": [
+       "Login (todos os usuários de teste da página)",
+       "Lista de produtos, ordenação e detalhe",
+       "Carrinho",
+       "Checkout (passos 1, 2 e conclusão)",
+       "Menu lateral (Logout, Reset App State, About)"
+      ],
+      "outScope": [
+       "Pagamento real (o site não cobra nada)",
+       "Testes de carga e de segurança mais profundos",
+       "Navegadores mobile reais",
+       "API (o site não tem API pública)"
+      ],
+      "basis": [
+       "r-login",
+       "r-inventario",
+       "r-carrinho",
+       "r-checkout",
+       "r-sessao"
+      ],
+      "assumptions": [
+       "O SauceDemo é um site de demonstração da Sauce Labs feito para praticar automação",
+       "Os usuários e a senha secret_sauce são públicos e aparecem na própria tela de login",
+       "O site pode mudar sem aviso, por isso os testes não dependem de textos que não são o foco do caso"
+      ],
+      "stakeholders": [
+       {
+        "role": "QA",
+        "name": "Matheus Bonotto",
+        "resp": "Planejar, escrever casos, automatizar, executar e reportar bugs"
+       },
+       {
+        "role": "Dono do produto",
+        "name": "Sauce Labs (site de demonstração)",
+        "resp": "Fonte das regras observadas no site"
+       }
+      ],
+      "independence": "author",
+      "communication": [
+       {
+        "what": "Status da execução e bugs abertos",
+        "who": "Recrutadores / comunidade (README)",
+        "when": "A cada execução"
+       },
+       {
+        "what": "Relatório HTML do Playwright",
+        "who": "Quem clonar o repositório",
+        "when": "A cada push (GitHub Actions)"
+       }
+      ],
+      "levels": [
+       "system",
+       "acceptance"
+      ],
+      "types": [
+       "functional",
+       "black-box",
+       "regression",
+       "non-functional"
+      ],
+      "quality": [
+       "functional-suitability",
+       "usability",
+       "performance"
+      ],
+      "techniques": [
+       "ep",
+       "bva",
+       "decision-table",
+       "error-guessing",
+       "exploratory"
+      ],
+      "environments": [
+       "prod"
+      ],
+      "data": "Usuários da tela de login (standard_user, locked_out_user, problem_user, performance_glitch_user, error_user, visual_user) com a senha secret_sauce. Dados do checkout: Matheus / Bonotto / 01001-000.",
+      "entry": [
+       "Site no ar",
+       "Casos de teste revisados",
+       "Projeto Playwright rodando localmente"
+      ],
+      "exit": [
+       "100% dos casos do smoke passando com standard_user",
+       "Todos os casos executados ao menos uma vez",
+       "Bugs encontrados registrados com passos e evidência",
+       "Taxa de aprovação de pelo menos 70% (o site tem defeitos de propósito, que não serão corrigidos)"
+      ],
+      "metrics": [
+       "pass-rate",
+       "coverage",
+       "execution",
+       "risk-coverage"
+      ],
+      "risks": [
+       "k-checkout",
+       "k-login",
+       "k-total",
+       "k-flaky"
+      ],
+      "estTechnique": "three-point",
+      "estA": 6,
+      "estM": 10,
+      "estB": 16,
+      "budget": "Projeto de estudo (sem custo)",
+      "start": "2026-06-01",
+      "end": "2026-06-05"
+     }
+    },
+    {
+     "ref": "d-vazio",
+     "type": "defect",
+     "title": "Checkout permite finalizar pedido com o carrinho vazio",
+     "status": "new",
+     "data": {
+      "severity": "major",
+      "priority": "medium",
+      "expected": "A loja não deveria deixar seguir para o checkout (ou finalizar) sem nenhum produto no carrinho.",
+      "actual": "Com o carrinho vazio, o botão Checkout funciona, o resumo mostra Total $0.00 e o Finish mostra \"Thank you for your order!\".",
+      "steps": [
+       "Logar com standard_user",
+       "Abrir o carrinho sem adicionar produtos",
+       "Clicar em Checkout",
+       "Preencher Matheus / Bonotto / 01001-000 e clicar em Continue",
+       "Clicar em Finish"
+      ],
+      "frequency": "always",
+      "evidence": [
+       "Relatório do Playwright com print, vídeo e trace: https://matteusbonotto.github.io/qa-saucedemo/"
+      ],
+      "environment": "prod",
+      "country": "BR",
+      "testObject": "",
+      "platform": "Chrome (desktop) - Windows 11",
+      "activity": "execution",
+      "level": "system",
+      "cases": [
+       "c-chk-vazio"
+      ],
+      "assignee": "",
+      "rootCause": "requirement"
+     }
+    },
+    {
+     "ref": "d-imagens",
+     "type": "defect",
+     "title": "problem_user: todos os produtos mostram a mesma imagem",
+     "status": "new",
+     "data": {
+      "severity": "minor",
+      "priority": "low",
+      "expected": "Cada produto deve mostrar a sua própria imagem.",
+      "actual": "Os 6 produtos aparecem com a mesma imagem (um cachorro), diferente do produto.",
+      "steps": [
+       "Logar com problem_user",
+       "Olhar as imagens da lista de produtos"
+      ],
+      "frequency": "always",
+      "evidence": [
+       "Relatório do Playwright com print, vídeo e trace: https://matteusbonotto.github.io/qa-saucedemo/"
+      ],
+      "environment": "prod",
+      "country": "BR",
+      "testObject": "",
+      "platform": "Chrome (desktop) - Windows 11",
+      "activity": "execution",
+      "level": "system",
+      "cases": [
+       "c-prob-imagens"
+      ],
+      "assignee": ""
+     }
+    },
+    {
+     "ref": "d-ordenacao",
+     "type": "defect",
+     "title": "problem_user: ordenação da lista não funciona",
+     "status": "new",
+     "data": {
+      "severity": "major",
+      "priority": "medium",
+      "expected": "Ao escolher Price (low to high) a lista deve ficar do menor para o maior preço.",
+      "actual": "A opção é escolhida, mas a lista continua na mesma ordem.",
+      "steps": [
+       "Logar com problem_user",
+       "Escolher Price (low to high) no filtro",
+       "Conferir a ordem dos preços"
+      ],
+      "frequency": "always",
+      "evidence": [
+       "Relatório do Playwright com print, vídeo e trace: https://matteusbonotto.github.io/qa-saucedemo/"
+      ],
+      "environment": "prod",
+      "country": "BR",
+      "testObject": "",
+      "platform": "Chrome (desktop) - Windows 11",
+      "activity": "execution",
+      "level": "system",
+      "cases": [
+       "c-prob-ordenacao"
+      ],
+      "assignee": ""
+     }
+    },
+    {
+     "ref": "d-sobrenome",
+     "type": "defect",
+     "title": "problem_user: campo Last Name não aceita o texto digitado no checkout",
+     "status": "new",
+     "data": {
+      "severity": "critical",
+      "priority": "high",
+      "expected": "O texto digitado em Last Name deve ficar no campo Last Name e o checkout deve seguir para o resumo.",
+      "actual": "O campo Last Name não fica preenchido e ao clicar em Continue aparece \"Error: Last Name is required\", travando a compra.",
+      "steps": [
+       "Logar com problem_user",
+       "Adicionar Sauce Labs Backpack e abrir o carrinho",
+       "Clicar em Checkout",
+       "Digitar Matheus, Bonotto e 01001-000",
+       "Clicar em Continue"
+      ],
+      "frequency": "always",
+      "evidence": [
+       "Relatório do Playwright com print, vídeo e trace: https://matteusbonotto.github.io/qa-saucedemo/"
+      ],
+      "environment": "prod",
+      "country": "BR",
+      "testObject": "",
+      "platform": "Chrome (desktop) - Windows 11",
+      "activity": "execution",
+      "level": "system",
+      "cases": [
+       "c-prob-sobrenome"
+      ],
+      "assignee": ""
+     }
+    },
+    {
+     "ref": "d-finish",
+     "type": "defect",
+     "title": "error_user: botão Finish não conclui o pedido",
+     "status": "new",
+     "data": {
+      "severity": "critical",
+      "priority": "high",
+      "expected": "Clicar em Finish deve mostrar \"Thank you for your order!\".",
+      "actual": "Clicar em Finish não leva para a página de pedido concluído.",
+      "steps": [
+       "Logar com error_user",
+       "Adicionar Sauce Labs Backpack",
+       "Seguir o checkout até o resumo",
+       "Clicar em Finish"
+      ],
+      "frequency": "always",
+      "evidence": [
+       "Relatório do Playwright com print, vídeo e trace: https://matteusbonotto.github.io/qa-saucedemo/"
+      ],
+      "environment": "prod",
+      "country": "BR",
+      "testObject": "",
+      "platform": "Chrome (desktop) - Windows 11",
+      "activity": "execution",
+      "level": "system",
+      "cases": [
+       "c-err-finish"
+      ],
+      "assignee": ""
+     }
+    },
+    {
+     "ref": "d-lento",
+     "type": "defect",
+     "title": "performance_glitch_user: login demora vários segundos para mostrar os produtos",
+     "status": "new",
+     "data": {
+      "severity": "minor",
+      "priority": "medium",
+      "expected": "A lista de produtos deve aparecer em até 2 segundos depois do login (critério do plano).",
+      "actual": "A página fica carregando por cerca de 5 segundos antes de mostrar Products.",
+      "steps": [
+       "Logar com performance_glitch_user",
+       "Medir o tempo até aparecer o título Products"
+      ],
+      "frequency": "always",
+      "evidence": [
+       "Relatório do Playwright com print, vídeo e trace: https://matteusbonotto.github.io/qa-saucedemo/"
+      ],
+      "environment": "prod",
+      "country": "BR",
+      "testObject": "",
+      "platform": "Chrome (desktop) - Windows 11",
+      "activity": "execution",
+      "level": "system",
+      "cases": [
+       "c-perf-login"
+      ],
+      "assignee": ""
+     }
+    },
+    {
+     "ref": "d-ordem",
+     "type": "defect",
+     "title": "Ordenação volta para Name (A to Z) ao sair do detalhe do produto",
+     "status": "new",
+     "data": {
+      "severity": "minor",
+      "priority": "low",
+      "expected": "A lista deve continuar na ordenação escolhida (Price high to low) ao voltar do detalhe.",
+      "actual": "Ao clicar em \"Back to products\" a lista volta para Name (A to Z) e o filtro também.",
+      "steps": [
+       "Logar com standard_user",
+       "Escolher Price (high to low)",
+       "Abrir qualquer produto",
+       "Clicar em Back to products"
+      ],
+      "frequency": "always",
+      "evidence": [
+       "Relatório do Playwright com print, vídeo e trace: https://matteusbonotto.github.io/qa-saucedemo/"
+      ],
+      "environment": "prod",
+      "country": "BR",
+      "testObject": "",
+      "platform": "Chrome (desktop) - Windows 11",
+      "activity": "execution",
+      "level": "system",
+      "cases": [
+       "c-inv-ordem-mantida"
+      ],
+      "assignee": ""
+     }
+    },
+    {
+     "ref": "d-cep",
+     "type": "defect",
+     "title": "Campo Zip/Postal Code aceita letras",
+     "status": "new",
+     "data": {
+      "severity": "minor",
+      "priority": "low",
+      "expected": "O sistema deve recusar um CEP só com letras e mostrar mensagem de formato inválido.",
+      "actual": "Com \"ABCDE\" no Zip/Postal Code o Continue segue para o resumo do pedido sem nenhum aviso.",
+      "steps": [
+       "Logar com standard_user",
+       "Adicionar um produto e ir para o checkout",
+       "Preencher Matheus / Bonotto / ABCDE",
+       "Clicar em Continue"
+      ],
+      "frequency": "always",
+      "evidence": [
+       "Relatório do Playwright com print, vídeo e trace: https://matteusbonotto.github.io/qa-saucedemo/"
+      ],
+      "environment": "prod",
+      "country": "BR",
+      "testObject": "",
+      "platform": "Chrome (desktop) - Windows 11",
+      "activity": "exploratory",
+      "level": "system",
+      "cases": [
+       "c-chk-cep-formato"
+      ],
+      "assignee": ""
+     }
+    },
+    {
+     "ref": "d-espacos",
+     "type": "defect",
+     "title": "Checkout aceita First Name, Last Name e Zip só com espaços",
+     "status": "new",
+     "data": {
+      "severity": "major",
+      "priority": "medium",
+      "expected": "Campos preenchidos só com espaços devem ser tratados como vazios e mostrar a mensagem de campo obrigatório.",
+      "actual": "Com um espaço em cada campo o Continue segue para o resumo, e o pedido pode ser finalizado sem nome nem CEP.",
+      "steps": [
+       "Logar com standard_user",
+       "Adicionar um produto e ir para o checkout",
+       "Digitar um espaço em First Name, Last Name e Zip/Postal Code",
+       "Clicar em Continue"
+      ],
+      "frequency": "always",
+      "evidence": [
+       "Relatório do Playwright com print, vídeo e trace: https://matteusbonotto.github.io/qa-saucedemo/"
+      ],
+      "environment": "prod",
+      "country": "BR",
+      "testObject": "",
+      "platform": "Chrome (desktop) - Windows 11",
+      "activity": "exploratory",
+      "level": "system",
+      "cases": [
+       "c-chk-espacos"
+      ],
+      "assignee": ""
+     }
+    },
+    {
+     "ref": "d-visual",
+     "type": "defect",
+     "title": "visual_user: imagem, preços e botão diferentes do standard_user",
+     "status": "new",
+     "data": {
+      "severity": "major",
+      "priority": "medium",
+      "expected": "A lista do visual_user deve ser igual à do standard_user: mesmas imagens, mesmos preços e botões alinhados.",
+      "actual": "A Sauce Labs Backpack mostra a imagem de erro 404, os preços mudam a cada login (ex.: $0.63 em vez de $29.99) e o último botão Add to cart fica desalinhado.",
+      "steps": [
+       "Logar com standard_user e anotar imagens e preços",
+       "Fazer logout",
+       "Logar com visual_user",
+       "Comparar a lista de produtos"
+      ],
+      "frequency": "always",
+      "evidence": [
+       "Relatório do Playwright com print, vídeo e trace: https://matteusbonotto.github.io/qa-saucedemo/"
+      ],
+      "environment": "prod",
+      "country": "BR",
+      "testObject": "",
+      "platform": "Chrome (desktop) - Windows 11",
+      "activity": "exploratory",
+      "level": "system",
+      "cases": [
+       "c-visual-user"
+      ],
+      "assignee": ""
+     }
+    },
+    {
+     "ref": "e-visual",
+     "type": "session",
+     "title": "Explorar layout com visual_user",
+     "status": "done",
+     "data": {
+      "target": "a lista de produtos, o carrinho e o checkout",
+      "resources": "visual_user, Chrome e a tela de 1366px e de celular (DevTools)",
+      "info": "problemas visuais: preços, imagens e botões fora do lugar",
+      "timebox": "60",
+      "tester": "Matheus Bonotto",
+      "notes": "O visual_user muda preços a cada login, troca a imagem da mochila pela de erro 404 e desalinha o último botão Add to cart. Carrinho e checkout seguem funcionando.",
+      "bugs": [
+       "d-visual"
+      ]
+     }
+    },
+    {
+     "ref": "e-campos",
+     "type": "session",
+     "title": "Explorar os campos do checkout",
+     "status": "done",
+     "data": {
+      "target": "os campos First Name, Last Name e Zip/Postal Code",
+      "resources": "standard_user e dados diferentes (espaços, letras no CEP, textos grandes, emojis)",
+      "info": "quais validações existem e o que passa sem validar",
+      "timebox": "30",
+      "tester": "Matheus Bonotto",
+      "notes": "Espaços e letras passam sem validação nos 3 campos do checkout. Textos grandes e emojis são aceitos e aparecem no resumo sem quebrar a tela.",
+      "bugs": [
+       "d-cep",
+       "d-espacos"
+      ]
+     }
+    }
+   ],
+   "study": true,
+   "minPass": 70
+  }
+ ]
+}
